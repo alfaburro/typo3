@@ -13,7 +13,7 @@ disk: 2048
 # The app's configuration when it's exposed to the web.
 web:
     locations:
-        '/':
+        '/my-new-project':
             # The public directory relative to the app root.
             root: 'public'
             # Forward resources to the app.
