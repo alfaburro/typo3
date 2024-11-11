@@ -42,7 +42,6 @@ hooks:
             # *CHANGE THIS VALUE IMMEDIATELY AFTER INSTALLATION*
 
             # TYPO3_DB_DRIVER=mysqli \
-            # TYPO3_DB_USERNAME=db \
             # TYPO3_DB_PORT=3306 \
             # TYPO3_DB_HOST=db \
             # TYPO3_DB_DBNAME=db \
@@ -53,6 +52,7 @@ hooks:
             TYPO3_DB_DRIVER=mysqli \
             TYPO3_DB_USERNAME=$(echo $PLATFORM_RELATIONSHIPS | base64 --decode | jq -r ".database[0].username") \
             TYPO3_DB_PASSWORD=$(echo $PLATFORM_RELATIONSHIPS | base64 --decode | jq -r ".database[0].password") \
+            TYPO3_DB_HOST=$(echo $PLATFORM_RELATIONSHIPS | base64 --decode | jq -r ".database[0].host") \
             vendor/bin/typo3 setup \
                 --project-name="TYPO3 on Platform.sh" \
                 --admin-username=admin \
