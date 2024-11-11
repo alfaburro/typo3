@@ -4,6 +4,15 @@ name: app
 # The language and version for your app.
 type: php:8.3
 
+runtime:
+    extensions:
+        - redis
+        - imagick
+        - apcu
+        - imagick
+        - curl
+        - gmp
+
 relationships:
     database: db:mysql
 
