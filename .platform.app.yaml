@@ -14,7 +14,7 @@ runtime:
         - gmp
 
 relationships:
-    database: database:mysql
+    database: db:mysql
 
 # The size of the app's persistent disk (in MB).
 disk: 2048
