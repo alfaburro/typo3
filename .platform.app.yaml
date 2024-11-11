@@ -46,14 +46,13 @@ hooks:
             # TYPO3_DB_PORT=3306 \
             # TYPO3_DB_HOST=db \
             # TYPO3_DB_DBNAME=db \
-            # TYPO3_SETUP_ADMIN_EMAIL=admin@example.com \
-            # TYPO3_SETUP_ADMIN_USERNAME=admin \
             # TYPO3_SETUP_CREATE_SITE="https://your-typo3-site.com/" \
             # TYPO3_PROJECT_NAME="Automated Setup" \
             # TYPO3_SERVER_TYPE="apache" \
             
             TYPO3_DB_DRIVER=mysqli \
             TYPO3_DB_USERNAME=$(echo $PLATFORM_RELATIONSHIPS | base64 --decode | jq -r ".database[0].username") \
+            TYPO3_DB_PASSWORD=$(echo $PLATFORM_RELATIONSHIPS | base64 --decode | jq -r ".database[0].password") \
             vendor/bin/typo3 setup \
                 --project-name="TYPO3 on Platform.sh" \
                 --admin-username=admin \
