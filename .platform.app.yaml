@@ -35,7 +35,8 @@ hooks:
                 --project-name="TYPO3 on Platform.sh" \
                 --admin-username=admin \
                 --admin-user-password=password \
-                --no-interaction
+                --server-type=other
+                --no-interaction \
                 --force
 
             # Sets up all extensions that are marked as active in the system.
