@@ -53,7 +53,7 @@ hooks:
             # TYPO3_SERVER_TYPE="apache" \
             
             TYPO3_DB_DRIVER=mysqli \
-            TYPO3_DB_USERNAME=user \
+            TYPO3_DB_USERNAME=$PLATFORM_RELATIONSHIPS | base64 --decode | jq -r ".database[0].username" \
             vendor/bin/typo3 setup \
                 --project-name="TYPO3 on Platform.sh" \
                 --admin-username=admin \
