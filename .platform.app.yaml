@@ -14,7 +14,7 @@ runtime:
         - gmp
 
 relationships:
-    database: dbmysql:mysql
+    database: db:mysql
 
 # The size of the app's persistent disk (in MB).
 disk: 2048
@@ -56,7 +56,7 @@ hooks:
             vendor/bin/typo3 setup \
                 --project-name="TYPO3 on Platform.sh" \
                 --admin-username=admin \
-                --admin-user-password=Pa$$w0rd \
+                --admin-user-password="Pa§§w0rd" \
                 --server-type=other \
                 --no-interaction \
                 --force
