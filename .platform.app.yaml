@@ -35,6 +35,9 @@ hooks:
         # Set TYPO3 site defaults on first deploy.
         if [ ! -f var/platformsh.installed ]; then
 
+            mv -f additional.php config/system/additional.php 
+            mv -f platformsh.php config/system/platformsh.php
+
             # On first install, create an inital admin user with a default password.
             # *CHANGE THIS VALUE IMMEDIATELY AFTER INSTALLATION*
             php vendor/bin/typo3 setup \

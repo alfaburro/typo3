@@ -1,0 +1,22 @@
+# TYPO3 Site Handling configuration YAML.
+# 
+# See https://docs.typo3.org/m/typo3/reference-coreapi/13.4/en-us/ApiOverview/SiteHandling/Basics.html
+rootPageId: 1
+
+# The base domain used to run the TYPO3 site. Here, the environment variable `PLATFORM_ROUTES_MAIN` set in 
+# `config/system/platformsh.php` is used. 
+base: '%env(PLATFORM_ROUTES_MAIN)%'
+
+# Site's available languages configuration.
+# 
+# See https://docs.typo3.org/m/typo3/reference-coreapi/13.4/en-us/ApiOverview/SiteHandling/AddLanguages.html
+languages:
+    -
+        languageId: 0
+        title: English
+        navigationTitle: English
+        base: '/'
+        locale: en_US.UTF8
+        hreflang: en-US
+        flag: us
+        enabled: true
