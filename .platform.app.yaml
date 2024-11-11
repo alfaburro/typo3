@@ -62,7 +62,7 @@ hooks:
                 --force
 
             # Sets up all extensions that are marked as active in the system.
-            php vendor/bin/typo3cms extension:setupactive || true
+            vendor/bin/typo3 extension:setupactive || true
 
             # Create file that indicates first deploy and installation has been completed.
             touch var/platformsh.installed
