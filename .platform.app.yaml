@@ -35,13 +35,25 @@ hooks:
         # Set TYPO3 site defaults on first deploy.
         if [ ! -f var/platformsh.installed ]; then
 
-            cp -f additional.php config/system/additional.php 
-            cp -f platformsh.php config/system/platformsh.php
+            cp additional.php config/system/additional.php 
+            cp platformsh.php config/system/platformsh.php
 
             # On first install, create an inital admin user with a default password.
             # *CHANGE THIS VALUE IMMEDIATELY AFTER INSTALLATION*
-            php vendor/bin/typo3 setup \
-                --driver=mysqli \
+
+            # TYPO3_DB_DRIVER=mysqli \
+            # TYPO3_DB_USERNAME=db \
+            # TYPO3_DB_PORT=3306 \
+            # TYPO3_DB_HOST=db \
+            # TYPO3_DB_DBNAME=db \
+            # TYPO3_SETUP_ADMIN_EMAIL=admin@example.com \
+            # TYPO3_SETUP_ADMIN_USERNAME=admin \
+            # TYPO3_SETUP_CREATE_SITE="https://your-typo3-site.com/" \
+            # TYPO3_PROJECT_NAME="Automated Setup" \
+            # TYPO3_SERVER_TYPE="apache" \
+            
+            TYPO3_DB_DRIVER=mysqli \
+            vendor/bin/typo3 setup \
                 --project-name="TYPO3 on Platform.sh" \
                 --admin-username=admin \
                 --admin-user-password=password \
