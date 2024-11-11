@@ -38,7 +38,7 @@ hooks:
                 --project-name="TYPO3 on Platform.sh" \
                 --admin-username=admin \
                 --admin-user-password=password \
-                --server-type=other
+                --server-type=other \
                 --no-interaction \
                 --force
 
