@@ -23,9 +23,9 @@ mounts:
     'public/uploads':
         source: local
         source_path: uploads
-    'config/sites':
+    'config/system':
         source: local
-        source_path: config/sites
+        source_path: config/system
     'var': 'shared:files/var'
 
 hooks:
