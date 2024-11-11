@@ -38,7 +38,7 @@ hooks:
             # On first install, create an inital admin user with a default password.
             # *CHANGE THIS VALUE IMMEDIATELY AFTER INSTALLATION*
             php vendor/bin/typo3 setup \
-                --driver=mysqli
+                --driver=mysqli \
                 --project-name="TYPO3 on Platform.sh" \
                 --admin-username=admin \
                 --admin-user-password=password \
