@@ -20,7 +20,10 @@ relationships:
 disk: 2048
 
 mounts:
-    "var": "shared:files/var"
+    'public/uploads':
+        source: local
+        source_path: uploads
+    'var': 'shared:files/var'
 
 hooks:
     deploy: |
