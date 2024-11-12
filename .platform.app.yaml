@@ -61,8 +61,8 @@ hooks:
                 --no-interaction \
                 --force
 
-            # Sets up all extensions that are marked as active in the system.
-            vendor/bin/typo3 extension:setupactive || true
+            # Todo: Setup extensions
+            # vendor/bin/typo3 extension:setup || true
 
             # Create file that indicates first deploy and installation has been completed.
             touch var/platformsh.installed
